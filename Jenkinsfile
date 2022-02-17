@@ -17,7 +17,7 @@ pipeline {
                 sh 'eval $(minikube docker-env)'
               
                 sh 'docker image build -t $IMAGE_FLASK:1.0 -f flask/Dockerfile flask'
-                sh 'docker image build -t $IMAGE_NGINX:1.0 -f nginx/Dockerfile nginx"
+                sh 'docker image build -t $IMAGE_NGINX:1.0 -f nginx/Dockerfile nginx'
                 
                 echo "Images built and pushed to repository"
             }
@@ -30,7 +30,7 @@ pipeline {
                    sh 'kubectl delete svc hello frontend'
                    sh 'kubectl apply -f flask.yaml'
                    sh 'kubectl apply -f nginx.yaml'
-                   sh 'echo "Backend and frontend services are deployed"'
+                   echo "Backend and frontend services are deployed"
                 }
             }
         }
