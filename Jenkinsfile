@@ -12,7 +12,7 @@ pipeline {
             steps {
                 //  Building new image
 
-                sh '/usr/local/bin/docker image build -t $IMAGE_FLASK:1.0 -f flask/Dockerfile flask'
+                sh '/usr/bin/docker image build -t $IMAGE_FLASK:1.0 -f flask/Dockerfile flask'
                 sh '/usr/bin/docker image build -t $IMAGE_NGINX:1.0 -f nginx/Dockerfile nginx'
                 
                 echo "Images built and pushed to repository"
