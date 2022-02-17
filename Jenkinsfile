@@ -12,7 +12,7 @@ pipeline {
             steps {
                 //  Building new image
               
-                sh 'cd ~"  
+                sh 'cd ~'  
                 sh 'minikube start'
                 sh 'eval $(minikube docker-env)'
               
